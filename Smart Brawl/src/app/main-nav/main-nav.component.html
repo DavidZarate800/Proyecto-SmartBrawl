@@ -1,0 +1,75 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar color="primary"><span class="material-icons">widgets</span>&nbsp; Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">
+        <img src="../../assets/logo.png" width="30" height="30" alt="" />
+        &nbsp; Smart Brawl
+      </a>
+      <a mat-list-item [routerLink]="['/home']"
+        ><span class="material-icons">home</span>&nbsp; Home</a
+      >
+      <a mat-list-item [routerLink]="['/about']"
+        ><span class="material-icons">info</span>&nbsp; About Us</a
+      >
+      <a mat-list-item [routerLink]="['/contact']"
+        ><span class="material-icons">alternate_email</span>&nbsp; Contact Us</a
+      >
+      <a mat-list-item [routerLink]="['/faqs']"
+        ><span class="material-icons">help</span>&nbsp; FAQs</a
+      >
+      <a mat-list-item href="javascript:void(0)" (click)="openDialogLogIn()"
+        ><span class="material-icons">login</span>&nbsp; Login</a
+      >
+      <a mat-list-item href="javascript:void(0)" (click)="openDialog()"
+        ><span class="material-icons">add_circle</span>&nbsp; Register!</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Search Equipment"
+        aria-label="Search"
+      />
+      <button class="btn btn-success my-2 my-sm-0" type="button">
+        Search
+      </button>
+      <button type="button" mat-icon-button>
+        <mat-icon>help</mat-icon>
+      </button>
+      <button type="button" mat-icon-button>
+        <mat-icon>accessibility_new</mat-icon>
+      </button>
+      <!-- Dentro del siguiente ng-container irá un ngif para que aparezca el icono si es que SI esta logeado -->
+      <ng-container>
+        <button type="button" mat-icon-button (click)="openDialogLogIn()">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </ng-container>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="container mt-3">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

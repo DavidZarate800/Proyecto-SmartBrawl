@@ -1,0 +1,59 @@
+<mat-toolbar><span class="material-icons">help</span>&nbsp; FAQs</mat-toolbar><br />
+
+<mat-accordion>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        ¿Es ésta una tienda online?
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>
+      La verdad es que no, es únicamente un sitio web en el que podrás consultar
+      variados datos de los productos que se busquen para así compararlos y
+      posteriormente comprarlos en ligas que nosotros facilitaremos.
+    </p>
+  </mat-expansion-panel>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        ¿Esta página web es 100% real?
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>
+      Cabe destacar que esta es una página web escolar hecha para un proyecto de
+      la materia de tecnologías web en la Universidad Autónoma de
+      Aguascalientes. Sin embargo, la información que aqui es dada junto con las
+      recomendaciónes del equipo son reales, aunque puede haber antigüedad en
+      los datos, ya que no dedicamos todo el tiempo a actualizar información
+      (ejemplo: precios).
+    </p>
+  </mat-expansion-panel>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        ¿Qué significa "FAQs"?
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Frequently Asked Questions.</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        More questions comming soon...
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Wubba Lubba Dub Dub.</p>
+  </mat-expansion-panel>
+</mat-accordion>

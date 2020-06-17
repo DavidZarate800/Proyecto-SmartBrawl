@@ -1,0 +1,73 @@
+<div class="card bg-light">
+  <article class="card-body mx-auto" style="max-width: 400px;">
+    <h2 class="card-title mt-3 text-center">Create Account</h2>
+    <p class="text-center">Get started with your free account!</p>
+    <form id="contactForm" [formGroup]="form" (ngSubmit)="submit()">
+      <span class="material-icons">
+        account_circle
+      </span>
+      &nbsp;
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Username"
+          class="form-control"
+          name="username"
+          formControlName="username"
+        />
+      </mat-form-field>
+      <br />
+      <span class="material-icons">
+        mail
+      </span>
+      &nbsp;
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="E-mail"
+          class="form-control"
+          name="email"
+          formControlName="email"
+        />
+      </mat-form-field>
+      <br />
+      <span class="material-icons">
+        lock
+      </span>
+      &nbsp;
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Create password"
+          class="form-control"
+          name="password"
+          formControlName="password"
+          type="password"
+        />
+      </mat-form-field>
+      <br />
+      <span class="material-icons">
+        lock
+      </span>
+      &nbsp;
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Repeat password"
+          class="form-control"
+          name="passwordR"
+          formControlName="passwordR"
+          type="password"
+        />
+      </mat-form-field>
+      <br />
+      <button
+        id="btnSubmit"
+        type="submit"
+        class="btn btn-block btn-outline-success"
+      >
+        Submit
+      </button>
+    </form>
+  </article>
+</div>
